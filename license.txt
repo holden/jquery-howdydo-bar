@@ -1,0 +1,7 @@
+* This is a simple jQuery notification bar inspired by the stackoverflow.com notification bar and the Hello Bar.
+* 
+* Version 0.1.5
+* March 21, 2011
+*
+* Howdy-do Notification Bar w/ jQuery by Leo Silva is licensed under a 
+* Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.

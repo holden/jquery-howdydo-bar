@@ -1,0 +1,21 @@
+Howdy-do Notification Bar with jQuery
+
+This is a simple jQuery notification bar inspired by the stackoverflow.com notification bar and the Hello Bar.
+The notification bar can be set to pop open or remain closed on page load. Delay and auto-hide options are available, as well as keeping the bar open/closed state across the domain.
+I’ve included positioning options, hover as default. It can scroll down with the page or push the content down – body { margin: 0 } recommended
+
+Requirements
+
+Tested with jQuery 1.4.2 and jQuery UI 1.8.6 (effects and easing)
+
+Latest Version
+
+0.1.5 (2011.03.21):
+
+Changed code to allow extra functionality:
+
+initState: allows open bar on page load
+keepState: remembers the bar’s last position (open/closed)
+0.1.4 (2011.03.18) – Fixed error that prevented functionality in Safari and IE7 (thanks to NioX for the heads up)
+
+Forked from http://leo.dolcepixels.com/learning/jquery/notification-bar-with-jquery/
