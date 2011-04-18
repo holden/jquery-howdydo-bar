@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Howdy-do jQuery Notification Bar</title>
+
+	<style>
+		html {
+			font-family: Tahoma, Geneva, sans-serif;
+			font-size: 12px;
+		}
+/*			html, body {
+			margin: 0;
+			padding: 0;
+		}
+*/			
+		.alert { color: #F00; }
+	</style>
+	<link href="css/howdydo-bar.css" rel="stylesheet" type="text/css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="js/jquery.howdydo-bar.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready( function(){
+			$( '#howdy' ).howdyDo({
+				action		: 'push',
+				effect		: 'fade',
+				duration	: 1000,
+				openAnchor	: '<img src="images/down-arr-16x16.png" border=0 />',
+				closeAnchor	: '<img src="images/close-16x16.png" border=0 />'
+			});
+		});
+	</script>
+</head>
+
+<body>
+<h1>Howdy-do Notification Bar with jQuery</h1>
+<p>This is a simple jQuery notification bar inspired by the <a href="http://stackoverflow.com">stackoverflow.com</a> notification bar and the <a href="http://hellobar.com">Hello Bar</a>.</p>
+<p> The notification bar can be set to pop open or remain closed on page load. Delay and auto-hide options are available, as well as keeping the bar open/closed state across the domain.<br>
+I’ve included positioning options, hover as default. It can scroll down with the page or push the content down – body { margin: 0 } recommended </p>
+<h2>Requirements</h2>
+<p>Tested with <strong>jQuery 1.4.2</strong> and <strong>jQuery UI 1.8.6</strong> (effects and easing)</p>
+	<h2>Latest Version</h2>
+	<p><strong>0.1.5</strong> (2011.03.21):</p>
+	<p>Changed code to allow extra functionality:</p>
+	<ul>
+		<li><strong>initState</strong>: allows open bar on page load</li>
+		<li><strong>keepState</strong>: remembers the bar's last position (open/closed) </li>
+	</ul>
+<p><strong>0.1.4</strong> (2011.03.18):</p>
+	<p>Fixed error that prevented functionality in Safari and IE7 (thanks to NioX for the heads up)</p>
+<h2>Usage</h2>
+	<pre>$('#myDiv').hodwyDo();</pre>
+<h2>Options</h2>
+	<table width="600" border="0" cellspacing="1" cellpadding="10">
+		<tr>
+			<td bgcolor="#CCCCCC">action</td>
+			<td bgcolor="#F5F5F5"><strong>hover</strong> - display bar over content<br>
+				<em>scroll</em> - hovers over content and scrolls down with page<br>
+				<em>push</em> - pushes content down - <span class="alert"><strong>Attention</strong></span> - works best with: <strong>body {margin: 0}</strong></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">effect</td>
+			<td bgcolor="#F5F5F5"><strong>slide</strong> | <em>blind</em> | <em>drop</em> |  <em>slide</em> | <em>fade</em> - easing on <em>fade</em> disabled</em></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">easing</td>
+			<td bgcolor="#F5F5F5">&quot;<strong>easeOutBounce</strong>&quot; - <a href="http://jqueryui.com/demos/effect/easing.html">jQuery UI easing</a>.</td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">duration</td>
+			<td bgcolor="#F5F5F5"><strong>500</strong> - Effect duration in milliseconds.</td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">delay</td>
+			<td bgcolor="#F5F5F5"><strong>500</strong> - Shows the Howdy-do bar <em>xxxx</em> milliseconds after page load. Ignored if <em>autoStart: <strong>false</strong></em></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">hideAfter</td>
+			<td bgcolor="#F5F5F5"><p><strong>0</strong> (disabled) - Hides the Howdy-do bar after <em>xxxx</em> milliseconds.<br>
+			Requires <em>autoStart: <strong>true</strong></em> (default) and <em>initState: <strong>&quot;closed&quot;</strong></em><strong></strong> (default)</p>
+			<p class="alert"><strong>It works the first time only</strong>  if <em>keepState: <strong>true</strong></em> or until the cookie is deleted or expires</p></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">initState</td>
+			<td bgcolor="#F5F5F5"><strong>&quot;closed</strong>&quot; |<em> &quot;open&quot;</em> - The initial state of the Howdy-do Bar.</td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">keepState</td>
+			<td bgcolor="#F5F5F5"><p><strong>true </strong>| <em>false</em> - sets a site wide cookie and records the Howdy-do Bar's last state. Set it to <em>false</em> to ignore the cookie and the bar's previous state.</p>
+			<p class="alert"><strong>This option overrides all the other options</strong> <strong>(<em>initState</em>, <em>hideAfter</em>, <em>autoStart</em>)</strong> until the cookie is deleted or expires (24hrs).</p></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">autoStart</td>
+			<td bgcolor="#F5F5F5"><strong>true</strong> | <em>false</em> - Shows the Howdy-do bar on page load. Ignored if <em>initState: <strong>&quot;open&quot;</strong></em></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">barClass</td>
+			<td bgcolor="#F5F5F5">The class of your choice. Default: &quot;<strong>howdydo-style&quot;</strong>, which can be edited to your liking.</td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">openAnchor</td>
+			<td bgcolor="#F5F5F5">Text or image. Default: &quot;<strong>open</strong>&quot;. Use &lt;img src=&quot;path/image.ext&quot; /&gt; for images</td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">closeAnchor</td>
+			<td bgcolor="#F5F5F5">Text or image. Default: &quot;<strong>close</strong>&quot;. Use &lt;img src=&quot;path/image.ext&quot; /&gt; for images</td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">callback</td>
+			<td bgcolor="#F5F5F5">callback function</td>
+		</tr>
+	</table>
+
+<h2>Defaults</h2>
+	<pre>
+	$('#myDiv').howdyDo({
+		action		: 'hover',		// bar behavior: hover | push | scroll		
+		effect		: 'slide',		// howdy-do bar effect: blind | drop | fade | slide
+		easing		: 'easeOutBounce',	// jQuery UI easing
+		duration	: 500,			// effect duration/speed in milliseconds
+		delay		: 500,			// delay before autoStart in milliseconds
+		hideAfter	: 0,			// autoHide delay in milliseconds: 0 (disabled)
+		initState	: 'closed',		// initial bar state: 'closed' | 'open'
+		keepState	: true,			// sets cookie to remember previous bar state.
+		autoStart	: true,			// shows bar on page load
+		barClass	: 'howdydo-style',	// your own customized Howdy-do bar style
+		openAnchor	: 'show',		// html element or text
+		closeAnchor	: 'hide',		// html element or text
+		callback	: function(){}		// callback function
+	});</pre>
+<h2>Making it simple</h2>
+<p>By default, the Howdy-do Bar will start out collapsed/closed, and will animate once the page loads. If you close it, it will remain closed on the subsequent pages of the same website. It should &quot;remember&quot; its last open/closed state by using a very simple cookie.</p>
+	<h3>More samples</h3>
+<p>I would like to keep the bar closed on all pages until the user opens it manually.</p>
+	<pre>$('#mydiv').howdyDo({
+	autoStart	: false,
+ 	keepState	: false,
+});
+ 	</pre>
+	<p>I would like to show the bar already open (no animation) on every page.</p>
+	<pre>$('#mydiv').howdyDo({
+	intState	: 'open',
+	keepState	: false
+});</pre>
+	<p>I would like to show the bar 5 seconds after the page has loaded and go away by iteself after another 10 seconds, but on the first page only and not on the subsequent pages.</p>
+	<pre>$('#mydiv').howdyDo({
+	delay		: 5000;
+	hideAfter	: 10000;
+});</pre>
+<h2>Testing and deleting cookies</h2>
+<p>This script relies on a cookie to keep its previous state. In order to test and retest it, you may need to delete the cookie a few times.<br>
+	I recommend using Firebug in conjunction with Firecookie to easily change or delete the cookie.</p>
+<p>
+		Cookie name: <strong>HowdydoBarState</strong><br>
+		Accepted values: <strong>open</strong> / <strong>closed</strong><br>
+</p>
+	<h2>Limitations</h2>
+	<p>I've tested it with <strong>FF 3.6</strong>, <strong>Opera 11</strong>, <strong>IE 7+</strong>, <strong>Chrome 8</strong>, <strong>Safari 5.0.3</strong> and it seems to work without any problems.</p>
+<p><del><strong class="alert">I could not get it to work with Safari (windows)</strong><br>
+		If you have a fix for it or can point me in the right direction I'll be glad to implement it.
+</del></p>
+	<p><strong>last update:</strong> <em>2011.03.18</em></p>
+
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Howdy-do Notification Bar w/ jQuery</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://About.me/leosilva" property="cc:attributionName" rel="cc:attributionURL">Leo Silva</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+	
+	<div id="howdy">
+		Hello! I am the Howdy-do Bar. Press <em>Esc</em> or click on the <strong>X</strong> to the right to dismiss me!<br />
+		<img src="images/howdy.jpg" style="padding: 10px; margin:10px; border: 1px dashed #8F9D6A; background: #E2DA99;" align="middle"/>
+	</div>	
+</body>
+</html>
