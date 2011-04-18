@@ -4,7 +4,7 @@ This is a simple jQuery notification bar inspired by the stackoverflow.com notif
 The notification bar can be set to pop open or remain closed on page load. Delay and auto-hide options are available, as well as keeping the bar open/closed state across the domain.
 I’ve included positioning options, hover as default. It can scroll down with the page or push the content down – body { margin: 0 } recommended
 
-https://img.skitch.com/20110418-8ri6cw2jidtdy9tmux3w3xrm9j.jpg
+http://img.skitch.com/20110418-8ri6cw2jidtdy9tmux3w3xrm9j.jpg
 http://img.skitch.com/20110418-t3r1dqqqt5qecb3beq9hqmc3fd.jpg
 
 == Usage
