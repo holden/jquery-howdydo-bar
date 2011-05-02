@@ -37,7 +37,7 @@ Tested with jQuery 1.4.2 and jQuery UI 1.8.6 (effects and easing)
 
 == Todo
 
-Add new CSS styles
+Add some CSS styles
 
 == Latest Version
 

@@ -1,10 +1,14 @@
 /* CSS Document */
 .howdydo-style {
-	background: #FAED9B;
-	border-bottom: 2px solid #FC0;
-	color: #666;
+	background: #047DBA;
+	border-bottom: 3px solid #FFF;
+	color: #C2DDFF;
 	text-align: center;
-	text-shadow: 0 1px #fff, 0 -1px #CCC;
+	font-family: Helvetica,Arial,Verdana,sans-serif;
+	font-size: 14px;
+	-moz-box-shadow: 0px 2px 4px #ccc;
+	-webkit-box-shadow: 0px 2px 4px #ccc;
+	box-shadow: 0px 2px 4px #ccc;
 }
 #howdydo-wrapper {
 	overflow: visible;
@@ -25,10 +29,15 @@
 	right: 30px;
 }
 #howdydo-open {
-	padding: 10px;
+	padding: 8px;
 	position: absolute;
 	right: 20px;
 	top: 0;
+	border-right: 3px solid #fff;
+	border-left: 3px solid #fff;
+	border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
 }
 .hover { position: absolute; top: 0;  left: 0; }
 .scroll { position: fixed; top: 0;  left: 0; }
