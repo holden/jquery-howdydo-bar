@@ -63,12 +63,13 @@
 		var objOpen = $( '#howdydo-open' ); // open anchor element
 		var objClose = $( '#howdydo-close' ); // close anchor element
 
-		objWrapper.after("<div style='clear:both;'></div>"); // clear <div> hack
+		objWrapper.after("<div id='header-space' style='clear:both;'></div>"); // clear <div> hack
 
 		switch( options.action ){ // set element classes according to optons.action
-			case 'scroll'	: objWrapper.addClass( 'scroll' ); break;
-			case 'push'		: objWrapper.addClass( 'push' ); break;
-			default			: objWrapper.addClass( 'hover' );
+			case 'scroll'			: objWrapper.addClass( 'scroll' ); break;
+			case 'push'				: objWrapper.addClass( 'push' ); break;
+			case 'stackoverflow'	: objWrapper.addClass( 'scroll' ); break;
+			default					: objWrapper.addClass( 'hover' );
 		}
 
 		switch( options.effect ){ // effect options, per effect type
@@ -118,12 +119,13 @@
 		function howdydoShow( delay ){ // show bar 
 			if( !delay || delay < 0 ) { delay = 0; }
 			setTimeout( function(){
-				if( options.action == 'push' ) {
+				if( options.action == 'push' || options.action == 'stackoverflow') {
 					objOpen.toggle( options.effect, effectOptions, options.duration, function() {
 						objWrapper.animate( { height: obj.outerHeight() }, 250,  function() {
 							obj.toggle( options.effect, effectOptions, options.duration, options.callback );
 						});
 					});
+					if( options.action == 'stackoverflow' ) { $( '#header-space' ).animate({ height: obj.outerHeight() }); }
 				} else {
 					obj.toggle( options.effect, effectOptions, options.duration, options.callback );
 					objOpen.toggle( options.effect, effectOptions, options.duration );
@@ -135,19 +137,19 @@
 
 		function howdydoHide(){ // hide bar
 			if( typeof barAnim != 'undefined' ) { clearTimeout( barAnim ); }
-			if( options.action == 'push' ) {
+			if( options.action == 'push' || options.action == 'stackoverflow' ) {
 				obj.toggle( options.effect, effectOptions, options.duration, function() {
 					objWrapper.animate( { height: 0 }, 250, function() {
-						if( options.barStyle != 'stackoverflow' ) {
+						if( options.action == 'stackoverflow' ) {
+							$( '#header-space' ).animate({ height: 0 });
+						} else {
 							objOpen.toggle( options.effect, effectOptions, options.duration, options.callback );
 						}
 					});
 				});
 			} else {
 				obj.toggle( options.effect, effectOptions, options.duration, options.callback );
-				if( options.barStyle != 'stackoverflow' ) {
-					objOpen.toggle( options.effect, effectOptions, options.duration );
-				}
+				objOpen.toggle( options.effect, effectOptions, options.duration );
 			}
 			setHowdydoCookie( 'HowdydoBarState', 'closed' );
 		}

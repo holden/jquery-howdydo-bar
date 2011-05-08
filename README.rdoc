@@ -41,14 +41,14 @@ Tested with jQuery 1.4.2 and jQuery UI 1.8.6 (effects and easing)
 * Add more CSS styles
 * Support for multiple messages on same page
 * Fix conflict w/facebook
-* Add function to remove reopen tab (more like stackoverflow msgs)
 
 == Latest Version
 
-0.1.5 (2011.03.21):
+0.1.6 (2011.05.8):
 
 Changed code to allow extra functionality:
 
+* added stackoverflow style functionality as well
 * initState: allows open bar on page load
 * keepState: remembers the bar’s last position (open/closed)
 * 0.1.4 (2011.03.18) – Fixed error that prevented functionality in Safari and IE7 (thanks to NioX for the heads up)
