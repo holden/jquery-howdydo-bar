@@ -44,6 +44,7 @@
 			keepState	: true, 			// sets cookie to remember previous bar state.
 			autoStart	: true, 			// shows bar on page load
 			barClass	: 'howdydo-style',	// your own customized Howdy-do bar style
+			barStyle    : 'hellobar',       // the style of the bar i.e. Hellobar vs Stackoverflow
 			openAnchor	: 'show', 			// html element or text
 			closeAnchor	: 'hide',			// html element or text
 			callback	: function(){}		// callback function
@@ -137,12 +138,16 @@
 			if( options.action == 'push' ) {
 				obj.toggle( options.effect, effectOptions, options.duration, function() {
 					objWrapper.animate( { height: 0 }, 250, function() {
-						objOpen.toggle( options.effect, effectOptions, options.duration, options.callback );
+						if( options.barStyle != 'stackoverflow' ) {
+							objOpen.toggle( options.effect, effectOptions, options.duration, options.callback );
+						}
 					});
 				});
 			} else {
 				obj.toggle( options.effect, effectOptions, options.duration, options.callback );
-				objOpen.toggle( options.effect, effectOptions, options.duration );
+				if( options.barStyle != 'stackoverflow' ) {
+					objOpen.toggle( options.effect, effectOptions, options.duration );
+				}
 			}
 			setHowdydoCookie( 'HowdydoBarState', 'closed' );
 		}

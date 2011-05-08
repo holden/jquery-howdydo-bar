@@ -26,6 +26,7 @@ Advanced
 	        keepState   : true,             // sets cookie to remember previous bar state.
 	        autoStart   : true,             // shows bar on page load
 	        barClass    : 'howdydo-style',  // your own customized Howdy-do bar style
+			barStyle    : 'hellobar,        // bar style ie stackoverflow | hellobar
 	        openAnchor  : 'show',           // html element or text
 	        closeAnchor : 'hide',           // html element or text
 	        callback    : function(){}      // callback function
