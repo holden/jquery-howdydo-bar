@@ -37,7 +37,10 @@ Tested with jQuery 1.4.2 and jQuery UI 1.8.6 (effects and easing)
 
 == Todo
 
-Add some CSS styles
+* Add more CSS styles
+* Support for multiple messages on same page
+* Fix conflict w/facebook
+* Add function to remove reopen tab (more like stackoverflow msgs)
 
 == Latest Version
 
